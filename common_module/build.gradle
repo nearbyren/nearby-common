@@ -1,7 +1,7 @@
-import com.composing.builds.*
+import nearby.composing.builds.*
 plugins {
     id 'com.android.library'
-    id 'com.composing.builds'
+    id 'nearby.composing.builds'
     id 'kotlin-android'
     id 'maven-publish'
 }

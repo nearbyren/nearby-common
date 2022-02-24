@@ -7,9 +7,9 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/../VersionPlugin" name="VersionPlugin">
+              <build path="$PROJECT_DIR$/nearby-composing-builds" name="nearby-composing-builds">
                 <projects>
-                  <project path="$PROJECT_DIR$/../VersionPlugin" />
+                  <project path="$PROJECT_DIR$/nearby-composing-builds" />
                 </projects>
               </build>
             </builds>
@@ -21,10 +21,10 @@
         <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/../VersionPlugin" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/common_module" />
+            <option value="$PROJECT_DIR$/nearby-composing-builds" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
