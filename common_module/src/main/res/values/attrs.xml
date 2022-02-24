@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="google_colors">
+        <item>@color/red</item>
+        <item>@color/blue</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+    </integer-array>
+    <declare-styleable name="dragApp">
+        <attr name="bottomDragVisibleHeight" format="dimension" />
+        <attr name="bototmExtraIndicatorHeight" format="dimension" />
+    </declare-styleable>
+    <!-- BGABadgeView -->
+    <declare-styleable name="BGABadgeView">
+        <!-- 徽章背景色 -->
+        <attr name="badge_bgColor" format="reference|color" />
+        <!-- 徽章文本的颜色 -->
+        <attr name="badge_textColor" format="reference|color" />
+        <!-- 徽章文本字体大小 -->
+        <attr name="badge_textSize" format="reference|dimension" />
+        <!-- 徽章背景与宿主控件上下边缘间距离 -->
+        <attr name="badge_verticalMargin" format="reference|dimension" />
+        <!-- 徽章背景与宿主控件左右边缘间距离 -->
+        <attr name="badge_horizontalMargin" format="reference|dimension" />
+        <!-- 徽章文本边缘与徽章背景边缘间的距离 -->
+        <attr name="badge_padding" format="reference|dimension" />
+        <!-- 徽章在宿主控件中的位置 -->
+        <attr name="badge_gravity" format="enum">
+            <enum name="rightTop" value="0" />
+            <enum name="rightCenter" value="1" />
+            <enum name="rightBottom" value="2" />
+        </attr>
+        <!-- 是否可以拖拽删除徽章 -->
+        <attr name="badge_dragable" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="pile">
+        <attr name="interval" format="dimension" />
+        <attr name="sizeRatio" format="float" />
+        <attr name="scaleStep" format="float" />
+        <attr name="displayCount" format="float" />
+    </declare-styleable>
+
+    <!--友好的预览加载数据提示-->
+    <declare-styleable name="ShimmerLayout">
+        <attr name="shimmer_color" format="color|reference" />
+        <attr name="shimmer_animation_duration" format="integer|reference" />
+        <attr name="shimmer_auto_start" format="boolean|reference" />
+        <attr name="shimmer_angle" format="integer|reference" />
+        <attr name="shimmer_mask_width" format="float|reference" />
+        <attr name="shimmer_gradient_center_color_width" format="float|reference" />
+        <attr name="shimmer_reverse_animation" format="boolean|reference" />
+    </declare-styleable>
+    <!--适配 ui ml-->
+    <declare-styleable name="AutoLayout_Layout">
+        <attr name="layout_auto_basewidth">
+            <flag name="width" value="1"></flag>
+            <flag name="height" value="2"></flag>
+            <flag name="textSize" value="4"></flag>
+            <flag name="padding" value="8"></flag>
+            <flag name="margin" value="16"></flag>
+            <flag name="marginLeft" value="32"></flag>
+            <flag name="marginTop" value="64"></flag>
+            <flag name="marginRight" value="128"></flag>
+            <flag name="marginBottom" value="256"></flag>
+            <flag name="paddingLeft" value="512"></flag>
+            <flag name="paddingTop" value="1024"></flag>
+            <flag name="paddingRight" value="2048"></flag>
+            <flag name="paddingBottom" value="4096"></flag>
+        </attr>
+        <attr name="layout_auto_baseheight">
+            <flag name="width" value="1"></flag>
+            <flag name="height" value="2"></flag>
+            <flag name="textSize" value="4"></flag>
+            <flag name="padding" value="8"></flag>
+            <flag name="margin" value="16"></flag>
+            <flag name="marginLeft" value="32"></flag>
+            <flag name="marginTop" value="64"></flag>
+            <flag name="marginRight" value="128"></flag>
+            <flag name="marginBottom" value="256"></flag>
+            <flag name="paddingLeft" value="512"></flag>
+            <flag name="paddingTop" value="1024"></flag>
+            <flag name="paddingRight" value="2048"></flag>
+            <flag name="paddingBottom" value="4096"></flag>
+        </attr>
+    </declare-styleable>
+
+
+    <!-- Material loading start-->
+    <declare-styleable name="MaterialProgress">
+        <attr name="mp_startColor" format="color" />
+        <attr name="mp_midColor" format="color" />
+        <attr name="mp_endColor" format="color" />
+        <attr name="mp_radius" format="dimension" />
+        <attr name="mp_strokeWidth" format="dimension" />
+        <attr name="mp_speed" format="float" />
+    </declare-styleable>
+    <!-- Material loading end-->
+    <!--empty start -->
+    <declare-styleable name="RippleView">
+        <attr name="rv_alpha" format="integer" />
+        <attr name="rv_framerate" format="integer" />
+        <attr name="rv_rippleDuration" format="integer" />
+        <attr name="rv_zoomDuration" format="integer" />
+        <attr name="rv_color" format="color" />
+        <attr name="rv_centered" format="boolean" />
+        <attr name="rv_type" format="enum">
+            <enum name="simpleRipple" value="0" />
+            <enum name="doubleRipple" value="1" />
+            <enum name="rectangle" value="2" />
+        </attr>
+        <attr name="rv_ripplePadding" format="dimension" />
+        <attr name="rv_zoom" format="boolean" />
+        <attr name="rv_zoomScale" format="float" />
+
+    </declare-styleable>
+    <!--empty end -->
+    <!--space start-->
+    <declare-styleable name="SpaceNavigationView">
+        <attr name="space_item_icon_size" format="dimension" />
+        <attr name="space_item_icon_only_size" format="dimension" />
+        <attr name="space_item_text_size" format="dimension" />
+        <attr name="space_background_color" format="color" />
+        <attr name="centre_button_color" format="color" />
+        <attr name="active_item_color" format="color" />
+        <attr name="inactive_item_color" format="color" />
+    </declare-styleable>
+    <!--space end-->
+
+    <!-- TabLayout start -->
+    <declare-styleable name="rtl_RecyclerTabLayout">
+        <attr name="rtl_tabIndicatorColor" format="color" />
+        <attr name="rtl_tabIndicatorHeight" format="dimension" />
+
+        <attr name="rtl_tabBackground" format="reference" />
+
+        <attr name="rtl_tabTextAppearance" format="reference" />
+        <attr name="rtl_tabSelectedTextColor" format="color" />
+
+        <attr name="rtl_tabOnScreenLimit" format="integer" />
+        <attr name="rtl_tabMinWidth" format="dimension" />
+        <attr name="rtl_tabMaxWidth" format="dimension" />
+
+        <attr name="rtl_tabPaddingStart" format="dimension" />
+        <attr name="rtl_tabPaddingTop" format="dimension" />
+        <attr name="rtl_tabPaddingEnd" format="dimension" />
+        <attr name="rtl_tabPaddingBottom" format="dimension" />
+        <attr name="rtl_tabPadding" format="dimension" />
+
+        <attr name="rtl_scrollEnabled" format="boolean" />
+
+    </declare-styleable>
+    <!-- TabLayout end -->
+
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+    <!--activity进入动画 start -->
+    <declare-styleable name="Rotate3dAnimation">
+        <attr name="rollType" format="enum">
+            <enum name="x" value="0" />
+            <enum name="y" value="1" />
+            <enum name="z" value="2" />
+        </attr>
+        <attr name="fromDeg" format="float" />
+        <attr name="toDeg" format="float" />
+        <attr name="pivotX" format="fraction" />
+        <attr name="pivotY" format="fraction" />
+    </declare-styleable>
+    <!--activity进入动画 end -->
+    <!--动画搜索 start-->
+    <declare-styleable name="MaterialSearchView">
+        <attr name="searchBackground" format="integer" />
+        <attr name="searchVoiceIcon" format="integer" />
+        <attr name="searchCloseIcon" format="integer" />
+        <attr name="searchBackIcon" format="integer" />
+        <attr name="searchSuggestionBackground" format="integer" />
+        <attr name="android:hint" />
+        <attr name="android:textColor" />
+        <attr name="android:textColorHint" />
+        <attr name="android:inputType" />
+    </declare-styleable>
+    <!--动画搜索 end-->
+    <!--swipedeck start-->
+    <declare-styleable name="SwipeDeck2">
+        <attr name="max_visible" format="integer" />
+        <attr name="opacity_end" format="float" />
+        <attr name="rotation_degrees" format="float" />
+        <attr name="card_spacing" format="dimension" />
+        <attr name="render_above" format="boolean" />
+        <attr name="swipe_enabled" format="boolean" />
+        <attr name="preview_layout" format="reference" />
+    </declare-styleable>
+    <!--swipedeck end-->
+    <!--  NavigationTabStrip start-->
+    <declare-styleable name="NavigationTabStrip">
+        <attr name="nts_color" format="color" />
+        <attr name="nts_size" format="dimension" />
+        <attr name="nts_weight" format="dimension" />
+        <attr name="nts_factor" format="float" />
+        <attr name="nts_titles" format="reference" />
+
+        <attr name="nts_type" format="enum">
+            <enum name="line" value="0" />
+            <enum name="point" value="1" />
+        </attr>
+        <attr name="nts_gravity" format="enum">
+            <enum name="bottom" value="0" />
+            <enum name="top" value="1" />
+        </attr>
+
+        <attr name="nts_typeface" format="string" />
+        <attr name="nts_corners_radius" format="dimension" />
+        <attr name="nts_animation_duration" format="integer" />
+
+        <attr name="nts_inactive_color" format="color" />
+        <attr name="nts_active_color" format="color" />
+    </declare-styleable>
+    <!--  NavigationTabStrip end-->
+    <!--下载进度条显示数字 start -->
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_current" format="integer" />
+        <attr name="progress_max" format="integer" />
+
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+
+        <attr name="progress_text_offset" format="dimension" />
+
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="Themes">
+        <attr name="numberProgressBarStyle" format="reference" />
+    </declare-styleable>
+    <!--下载进度条显示数字 end -->
+</resources>

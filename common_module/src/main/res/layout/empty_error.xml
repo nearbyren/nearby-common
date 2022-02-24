@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ren.nearby.common_module.empty.widget.RippleView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ripple_error"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:rv_color="#4D4D4D"
+    app:rv_rippleDuration="100">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+        <!--empty_error-->
+        <ImageView
+            android:id="@+id/iv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wifi_error"
+            tools:src="@drawable/wifi_error" />
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_error"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="网络连接失败,点击刷新!"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+
+</ren.nearby.common_module.empty.widget.RippleView>

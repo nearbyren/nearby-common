@@ -1,0 +1,200 @@
+import com.composing.builds.*
+plugins {
+    id 'com.android.library'
+    id 'com.composing.builds'
+    id 'kotlin-android'
+    id 'maven-publish'
+}
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'ren.nearby.common_module'
+                artifactId = 'common'
+                version = '1.0.0'
+            }
+        }
+    }
+}
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+        //阿里路由
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    api BuildConfig.percent
+//    library重复依赖问题
+    api(BuildConfig.appcompat_v7) {
+        exclude module: "support-annotations"
+    }
+    api BuildConfig.cardview_v7
+    api BuildConfig.design
+    api BuildConfig.support_compat
+//    library重复依赖问题
+    api(BuildConfig.support_v13) {
+        exclude module: "support-annotations"
+    }
+    //微信热更新 版本更新 bug监控
+//    api BuildConfig.crashreport_upgrade
+    //加载图库
+    api BuildConfig.glide
+    api BuildConfig.dagger2
+    annotationProcessor  BuildConfig.dagger2_compiler
+    api BuildConfig.dagger2_android
+    api BuildConfig.dagger2_support
+    annotationProcessor BuildConfig.dagger2_processor
+
+    api BuildConfig.logger
+    api BuildConfig.timber
+
+    //阿里路由
+    api BuildConfig.arouter_api
+    annotationProcessor  BuildConfig.arouter_compiler
+//    implementation "androidx.core:core-ktx:+"
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+//    annotationProcessor BuildConfig.dbing_compiler
+    api BuildConfig.lcy_ext
+    api BuildConfig.nav_fra_ktx
+    api BuildConfig.nav_ui_ktx
+    api BuildConfig.kot_cor_and
+    api BuildConfig.kot_cor_cor
+    //加载图库
+    api BuildConfig.glide
+//    api BuildConfig.camera_core
+//    api BuildConfig.camera_camera2
+//    api BuildConfig.camera_lifecycle
+//    api BuildConfig.camera_view
+//    api BuildConfig.camera_extensions
+
+
+    //阿里路由好模块化教程
+//    https://yq.aliyun.com/articles/584246
+    //检测内存泄漏
+//    debugImplementation BuildConfig.leakcanary_a
+//    api BuildConfig.leakcanary_a_n_o
+//    debugImplementation BuildConfig.leakcanary_s_f
+    api BuildConfig.arouter_api
+    annotationProcessor BuildConfig.arouter_compiler
+    //tab库
+    api BuildConfig.constraint_layout
+    api BuildConfig.constraint_layoutSolver
+    api BuildConfig.banner
+    api BuildConfig.permissionsdispatcher
+    annotationProcessor BuildConfig.permissionsdispatcher_processor
+    api BuildConfig.crashreport
+    api BuildConfig.nativecrashreport
+//    debugImplementation  BuildConfig.leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+    api BuildConfig.smarttablayout_library
+    api BuildConfig.smarttablayout_utils_v4
+    api BuildConfig.mtwalle
+    api BuildConfig.kotlin_stdlib
+//    api BuildConfig.MaterialIntroView
+    api BuildConfig.slidingtutorial
+    //弹出框
+    api BuildConfig.Toasty
+    api BuildConfig.light
+    api BuildConfig.stateframelayout
+    api BuildConfig.lifecycle_extensions2
+
+    //异常分析
+    api BuildConfig.crashwoodpecker
+    //微信热更新
+    api BuildConfig.tinker_lib
+//    api BuildConfig.tinker_loader
+//    annotationProcessor BuildConfig.tinker_ano
+//    compileOnly BuildConfig.tinker_ano
+//    compileOnly BuildConfig.tinker_ano_support
+
+    api BuildConfig.multidex
+
+    api BuildConfig.rxjava
+    api BuildConfig.rxandroid
+    api(BuildConfig.rxbinding2) {
+        exclude module: "rxjava"
+    }
+
+    api BuildConfig.okhttp
+    api BuildConfig.okhttp
+    api BuildConfig.logging_interceptor
+//    library重复依赖问题
+    api(BuildConfig.retrofit) {
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+    }
+//    library重复依赖问题
+    api(BuildConfig.retrofit_converter_gson) {
+//        exclude module: 'gson'
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+        exclude module: 'retrofit'
+    }
+//    library重复依赖问题
+    api(BuildConfig.adapter_rxjava2) {
+        exclude module: 'rxjava'
+        exclude module: 'okhttp'
+        exclude module: 'retrofit'
+        exclude module: 'okio'
+    }
+    api BuildConfig.converter_calars
+    api BuildConfig.stetho_okhttp3
+    api BuildConfig.stetho
+
+
+    api BuildConfig.dagger2
+    annotationProcessor BuildConfig.dagger2_compiler //kapt 处理dagger 与kotlin问题
+    api BuildConfig.dagger2_android
+    api BuildConfig.dagger2_support
+    annotationProcessor BuildConfig.dagger2_processor //kapt 处理dagger 与kotlin问题
+}
+
+configurations.all { //循环一个个的依赖库
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        def requested = details.requested //获取当前循环到的依赖库
+//        println("vale ="+requested)
+//        println("vale 2 ="+requested.name)
+        if (requested.group == 'com.android.support') {//如果这个依赖库群组的名字是com.android.support
+            if (!requested.name.startsWith("multidex")) { //且其名字不是以multidex开头的
+                details.useVersion '28.0.0'//这里指定需要统一的依赖版本
+            }
+        }
+        if (requested.group == 'androidx.annotation:annotation:1.0.0') {//如果这个依赖库群组的名字是com.android.support
+            details.useVersion '1.1.0'//这里指定需要统一的依赖版本
+        }
+    }
+}
