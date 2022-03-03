@@ -14,6 +14,7 @@ buildscript {
 
 apply plugin: 'kotlin'
 apply plugin: 'java-gradle-plugin'
+apply plugin: 'maven-publish'
 
 repositories {
     maven {
@@ -43,7 +44,7 @@ compileTestKotlin {
 
 gradlePlugin {
     plugins {
-        version {
+        routerPlugin  {
             // 在 app 模块须要经过 id 引用这个插件
             id = 'nearby.composing.builds'
             // 实现这个插件的类的路径
