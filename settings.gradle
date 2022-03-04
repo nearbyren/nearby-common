@@ -10,4 +10,4 @@ dependencyResolutionManagement {
 rootProject.name = "nearby-common"
 include ':app'
 include ':common_module'
-includeBuild("nearby-composing-builds")
+//includeBuild("nearby-composing-builds")

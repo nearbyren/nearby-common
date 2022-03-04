@@ -1,4 +1,5 @@
 import nearby.composing.builds.*
+
 plugins {
     id 'com.android.library'
     id 'nearby.composing.builds'
@@ -55,50 +56,46 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    api BuildConfig.percent
+    api AndroidX.percent
 //    library重复依赖问题
-    api(BuildConfig.appcompat_v7) {
+    api(AndroidX.appcompat) {
         exclude module: "support-annotations"
     }
-    api BuildConfig.cardview_v7
-    api BuildConfig.design
-    api BuildConfig.support_compat
+    api AndroidX.cardview
+    api Google.material
+    api AndroidX.support_compat
 //    library重复依赖问题
-    api(BuildConfig.support_v13) {
+    api(AndroidX.support_v13) {
         exclude module: "support-annotations"
     }
+
+    api AndroidX.lifecyle.lcy_ext
+    api AndroidX.navigation.fragmentKtx
+    api AndroidX.navigation.uiKtx
+    api AndroidX.navigation.kot_cor_and
+    api AndroidX.navigation.kot_cor_and
+    //tab库
+//    api AndroidX.constraintlayout.constraint_layout
+//    api AndroidX.constraintlayout.constraint_layoutSolver
+    api AndroidX.multidex
+
     //微信热更新 版本更新 bug监控
 //    api BuildConfig.crashreport_upgrade
     //加载图库
-    api BuildConfig.glide
-    api BuildConfig.dagger2
-    annotationProcessor  BuildConfig.dagger2_compiler
-    api BuildConfig.dagger2_android
-    api BuildConfig.dagger2_support
-    annotationProcessor BuildConfig.dagger2_processor
+    api ThirdLib.glide.glide
+    api ThirdLib.dagger.dagger
+    annotationProcessor ThirdLib.dagger.dagger2_compiler
+    api ThirdLib.dagger.dagger2_android
+    api ThirdLib.dagger.dagger2_support
+    annotationProcessor ThirdLib.dagger.dagger2_processor
 
-    api BuildConfig.logger
-    api BuildConfig.timber
+
+    api ThirdLib.logger.logger
+    api ThirdLib.timber.timber
 
     //阿里路由
-    api BuildConfig.arouter_api
-    annotationProcessor  BuildConfig.arouter_compiler
-//    implementation "androidx.core:core-ktx:+"
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-//    annotationProcessor BuildConfig.dbing_compiler
-    api BuildConfig.lcy_ext
-    api BuildConfig.nav_fra_ktx
-    api BuildConfig.nav_ui_ktx
-    api BuildConfig.kot_cor_and
-    api BuildConfig.kot_cor_cor
-    //加载图库
-    api BuildConfig.glide
-//    api BuildConfig.camera_core
-//    api BuildConfig.camera_camera2
-//    api BuildConfig.camera_lifecycle
-//    api BuildConfig.camera_view
-//    api BuildConfig.camera_extensions
+    api ThirdLib.arouter.arouter_api
+    annotationProcessor ThirdLib.arouter.arouter_compiler
 
 
     //阿里路由好模块化教程
@@ -107,80 +104,60 @@ dependencies {
 //    debugImplementation BuildConfig.leakcanary_a
 //    api BuildConfig.leakcanary_a_n_o
 //    debugImplementation BuildConfig.leakcanary_s_f
-    api BuildConfig.arouter_api
-    annotationProcessor BuildConfig.arouter_compiler
-    //tab库
-    api BuildConfig.constraint_layout
-    api BuildConfig.constraint_layoutSolver
-    api BuildConfig.banner
-    api BuildConfig.permissionsdispatcher
-    annotationProcessor BuildConfig.permissionsdispatcher_processor
-    api BuildConfig.crashreport
-    api BuildConfig.nativecrashreport
-//    debugImplementation  BuildConfig.leakcanary
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 
-    api BuildConfig.smarttablayout_library
-    api BuildConfig.smarttablayout_utils_v4
-    api BuildConfig.mtwalle
-    api BuildConfig.kotlin_stdlib
-//    api BuildConfig.MaterialIntroView
-    api BuildConfig.slidingtutorial
+
     //弹出框
-    api BuildConfig.Toasty
-    api BuildConfig.light
-    api BuildConfig.stateframelayout
-    api BuildConfig.lifecycle_extensions2
+    api ThirdLib.Toasty
+    api ThirdLib.light
+    api ThirdLib.stateframelayout
 
-    //异常分析
-    api BuildConfig.crashwoodpecker
-    //微信热更新
-    api BuildConfig.tinker_lib
-//    api BuildConfig.tinker_loader
-//    annotationProcessor BuildConfig.tinker_ano
-//    compileOnly BuildConfig.tinker_ano
-//    compileOnly BuildConfig.tinker_ano_support
+    api ThirdLib.banner.banner
+    api ThirdLib.permissionsdispatcher.permissionsdispatcher
+    annotationProcessor ThirdLib.permissionsdispatcher.permissionsdispatcher_processor
+    api ThirdLib.crashwoodpecker.crashwoodpecker
+    api ThirdLib.nativecrashreport
 
-    api BuildConfig.multidex
+    api ThirdLib.tinker.tinker_lib
 
-    api BuildConfig.rxjava
-    api BuildConfig.rxandroid
-    api(BuildConfig.rxbinding2) {
+
+    api ThirdLib.rxjava.rxjava
+    api ThirdLib.rxjava.rxandroid
+    api(ThirdLib.rxjava.rxbinding2) {
         exclude module: "rxjava"
     }
 
-    api BuildConfig.okhttp
-    api BuildConfig.okhttp
-    api BuildConfig.logging_interceptor
+    api ThirdLib.okhttp3.okhttp3
+
+    api ThirdLib.okhttp3.logging_interceptor
 //    library重复依赖问题
-    api(BuildConfig.retrofit) {
+    api(ThirdLib.okhttp3.retrofit) {
         exclude module: 'okhttp'
         exclude module: 'okio'
     }
 //    library重复依赖问题
-    api(BuildConfig.retrofit_converter_gson) {
+    api(ThirdLib.okhttp3.retrofit_converter_gson) {
 //        exclude module: 'gson'
         exclude module: 'okhttp'
         exclude module: 'okio'
         exclude module: 'retrofit'
     }
 //    library重复依赖问题
-    api(BuildConfig.adapter_rxjava2) {
+    api(ThirdLib.okhttp3.adapter_rxjava2) {
         exclude module: 'rxjava'
         exclude module: 'okhttp'
         exclude module: 'retrofit'
         exclude module: 'okio'
     }
-    api BuildConfig.converter_calars
-    api BuildConfig.stetho_okhttp3
-    api BuildConfig.stetho
+    api ThirdLib.okhttp3.converter_calars
+    api ThirdLib.stetho_okhttp3.stetho_okhttp3
+    api ThirdLib.stetho.stetho
 
 
-    api BuildConfig.dagger2
-    annotationProcessor BuildConfig.dagger2_compiler //kapt 处理dagger 与kotlin问题
-    api BuildConfig.dagger2_android
-    api BuildConfig.dagger2_support
-    annotationProcessor BuildConfig.dagger2_processor //kapt 处理dagger 与kotlin问题
+    api ThirdLib.dagger.dagger
+    annotationProcessor ThirdLib.dagger.dagger2_compiler //kapt 处理dagger 与kotlin问题
+    api ThirdLib.dagger.dagger2_android
+    api ThirdLib.dagger.dagger2_support
+    annotationProcessor ThirdLib.dagger.dagger2_processor //kapt 处理dagger 与kotlin问题
 }
 
 configurations.all { //循环一个个的依赖库
@@ -193,7 +170,8 @@ configurations.all { //循环一个个的依赖库
                 details.useVersion '28.0.0'//这里指定需要统一的依赖版本
             }
         }
-        if (requested.group == 'androidx.annotation:annotation:1.0.0') {//如果这个依赖库群组的名字是com.android.support
+        if (requested.group == 'androidx.annotation:annotation:1.0.0') {
+//如果这个依赖库群组的名字是com.android.support
             details.useVersion '1.1.0'//这里指定需要统一的依赖版本
         }
     }
